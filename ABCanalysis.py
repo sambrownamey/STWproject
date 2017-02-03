@@ -66,7 +66,7 @@ events = events[
  
 import os
 
-anomaliesdir = "../Anomalies csv files/"
+anomaliesdir = "S:/00_Projects/CO00690090_STW WQ Analytics/05_Working Files/Anomalies csv files/"
 
 #infiles = ["AO3  anomalies_Jan_2015_Jun_2016.csv",
 #           "AO4  anomalies_Jan_2015_Jun_2016.csv"]
@@ -106,7 +106,7 @@ anomalies = anomalies.drop_duplicates(subset = ['ReadingHour', 'SensorFileName']
 #loggerdict = pd.read_csv(logdictdir+logdictinfile, 
 #                         encoding='latin-1')
 
-from dma_mapper_copy import d
+from stwpy.dma_mapper_copy import d
 
 anomalies['DMA'] = anomalies['SensorID'].map(d)
 anomalies['DMA'] = anomalies['DMA'].apply(lambda s: s.zfill(5))

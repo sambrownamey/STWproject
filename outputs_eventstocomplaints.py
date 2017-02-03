@@ -425,15 +425,15 @@ plt.suptitle('Works and bursts leading to complaints', fontsize=14)
 
 plt.show()
 
-#%%
-
-fig, ax = plt.subplots(nrows = 2, ncols = 4, figsize = (16,8), sharey = True, sharex = True)
-
-for i in range(8):
-    aggd[workcols[i]].unstack().transpose().plot(kind='bar', ax=ax.flatten()[i])
-    ax.flatten()[i].set_title(workcols[i])
-
-# TODO: Produce more plots like the above.
+##%%
+#
+#fig, ax = plt.subplots(nrows = 2, ncols = 4, figsize = (16,8), sharey = True, sharex = True)
+#
+#for i in range(8):
+#    aggd[workcols[i]].unstack().transpose().plot(kind='bar', ax=ax.flatten()[i])
+#    ax.flatten()[i].set_title(workcols[i])
+#
+## TODO: Produce more plots like the above.
 
 #%% Forecasting reductions: data
 
@@ -487,8 +487,6 @@ aggd = piv[piv['YearComplaint']>=2014][workcols + ['YearComplaint']].groupby(
     ]).agg(sum) # Change to sum for raw totals
 
 aggd = aggd.transpose()
-
-#%% Marianne's massive table
 
 EventsWithComplaints.groupby(by  = ['AtLeastOneComplaint',
                                     'InterventionTypeCause',

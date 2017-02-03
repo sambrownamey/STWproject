@@ -312,12 +312,9 @@ fullevents['EndDate'] = fullevents['End'].dt.date
 
 fullevents.groupby(by = ['Year', 'SAPRegion', 'InterventionType']).size()
 
-
-
 if pickle:
     fullevents.to_pickle('PickledData/FullEventsList.pkl')
-
-                                                
+                                              
 #%% #Filter for first quarter of 2016 in four WQZs
 events2016firstquarter = localevents[
         (localevents['StartDateTime'] >= pd.to_datetime("2016-01-01")) &
@@ -338,7 +335,3 @@ gpdtypes2016janmar = pd.DataFrame(gpdtypes2016janmar).reset_index()
 WQZfilter = ['Bordesley', 'Selly Park', 'Solihull', 'Hagley']
 
 filtered = gpdtypes2016janmar[gpdtypes2016janmar['WQZ'].isin(WQZfilter)]
-
-
-
-               
