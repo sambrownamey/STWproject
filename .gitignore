@@ -90,3 +90,5 @@ ENV/
 
 # Pickled data
 PickledData/
+linking_data/
+.spyproject/
